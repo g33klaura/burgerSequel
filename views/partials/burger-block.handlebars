@@ -1,0 +1,9 @@
+{{!-- This renders the devour button with each burger instance --}}
+
+<li>
+	{{burger_name}}
+
+	<button class="change-eat" data-id="{{id}}" data-neweat="{{devour}}">
+		{{#if devour}}Devour it!{{/if}}
+	</button>
+</li>
