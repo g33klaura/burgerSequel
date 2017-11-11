@@ -1,16 +1,18 @@
 html {
-	background: url('../img/parrot_burger.jpg') no-repeat center center fixed;
-			-webkit-background-size: cover;
-  		-moz-background-size: cover;
-  		-o-background-size: cover;
-  		background-size: cover;
+	background: url('../img/giant_burger_yellow.jpg') no-repeat center center fixed;
+	/*background: url('../img/unique_burger_blue.jpg') no-repeat center center fixed;*/
+		-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
   font-family: 'Lato', sans-serif;
 }
 
 h1 {
 	font-family: 'Passion One', cursive;
 	font-weight: 700;
-	color: #e65100;
+	/*color: #e65100;*/
+	color: #ff3d00;
 }
 
 h3, h5 {
