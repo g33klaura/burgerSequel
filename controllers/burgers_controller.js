@@ -1,14 +1,17 @@
-// REQUIREMENTS ========================================
-//
+// REQUIREMENTS
+// ==========================================
 // Import burger model script
 var burger = require('../models/burger.js');
+
+// Sequelize model requirements
+const db = require('../models');
 
 var express = require('express');
 var router = express.Router();
 
 
-// ROUTES ==============================================
-//
+// ROUTES
+// ==========================================
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {
   
@@ -54,7 +57,7 @@ router.put('/api/burgers/:id', function(req, res) {
 });
 
 
-// EXPORTS =============================================
-//
+// EXPORTS
+// ==========================================
 // Export routes for server.js
 module.exports = router;
