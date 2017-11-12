@@ -4,12 +4,11 @@ module.exports = function(sequelize, DataTypes) {
 		name: DataTypes.STRING
 	});
 
-/*
 	Customer.associate = function(models) {
 		Customer.hasMany(models.Burger, {
 			onDelete: 'cascade'
 		});
 	};
-*/
+
 	return Customer;
 };
