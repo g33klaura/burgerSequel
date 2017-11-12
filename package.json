@@ -1,7 +1,7 @@
 {
-  "name": "burger",
+  "name": "burgerSequel",
   "version": "1.0.0",
-  "description": "\"Eat-Da-Burger!\" is a restaurant app that lets users input the names of burgers they'd like to eat, then devour each burger with a click of a button",
+  "description": "\"Eat-Da-Burger 2!\" is a restaurant app that lets users input the names of burgers they'd like to eat, then devour each burger with a click of a button",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/g33klaura/burger.git"
+    "url": "git+https://github.com/g33klaura/burgerSequel.git"
   },
   "author": "Laura Boetcher",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/g33klaura/burger/issues"
+    "url": "https://github.com/g33klaura/burgerSequel/issues"
   },
-  "homepage": "https://github.com/g33klaura/burger#readme",
+  "homepage": "https://github.com/g33klaura/burgerSequel#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
