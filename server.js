@@ -35,8 +35,9 @@ app.use(express.static('public'));
 // ROUTING
 // ==========================================
 // Import routes and give the server access to them
-// var routes = require('./controllers/burgers_controller.js');
-// app.use('/', routes);
+// ****This was from old Burger app-- still use???
+var routes = require('./controllers/burgers_controller.js');
+app.use('/', routes);
 
 // ******HAVEN'T WRITTEN SOME ROUTES YET******
 // TURN THEM BACK ON WHEN WRITTEN*************
