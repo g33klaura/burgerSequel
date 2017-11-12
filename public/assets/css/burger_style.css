@@ -1,6 +1,6 @@
 html {
-	background: url('../img/giant_burger_yellow.jpg') no-repeat center center fixed;
-	/*background: url('../img/unique_burger_blue.jpg') no-repeat center center fixed;*/
+	/*background: url('../img/giant_burger_yellow.jpg') no-repeat center center fixed;*/
+	background: url('../img/unique_burger_blue.jpg') no-repeat center center fixed;
 		-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -21,7 +21,15 @@ h3, h5 {
 	color: #fff;
 }
 
+h6 {
+	padding-top: 10px;
+}
+
 .eaten {
 	/*color: #bbb;*/
 	text-decoration: line-through;
+}
+
+#burger-form {
+	background-color: rgba(255,255,255,0.4);
 }
