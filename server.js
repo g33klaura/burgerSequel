@@ -36,7 +36,9 @@ app.use(express.static('public'));
 // ==========================================
 // Import routes and give the server access to them
 // ****This was from old Burger app-- still use???
+// Allows templates to render... doesn't work if switched to burger-api-routes...
 var routes = require('./controllers/burgers_controller.js');
+// var routes = require('./routes/burger-api-routes.js');
 app.use('/', routes);
 
 // ******HAVEN'T WRITTEN SOME ROUTES YET******
