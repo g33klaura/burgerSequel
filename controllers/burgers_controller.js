@@ -1,7 +1,7 @@
 // REQUIREMENTS
 // ==========================================
 // Import burger model script
-var burger = require('../models/burger.js');
+// var burger = require('../models/burger.js');
 
 // Sequelize model requirements
 const db = require('../models');
@@ -25,12 +25,12 @@ router.get('/', function(req, res) {
   //   res.render('index');
   // })
   
-    // var query = {};
-    // if (req.query.customer_id) {
-    //   query.CustomerId = req.query.customer_id;
-    // }
+    var query = {};
+      if (req.query.customer_id) {
+        query.CustomerId = req.query.customer_id;
+      }
     db.Burger.findAll({
-      // where: query,
+      where: query,
       include: [db.Customer]
       // Burgers: data
     }).then(function (dbBurger) {
@@ -42,17 +42,15 @@ router.get('/', function(req, res) {
       // };
       console.log(hbsObject);
       res.render('index', hbsObject);
-      res.render('index');
+      // res.render('index');
     });
-  
-
 });
 
 
 /*
+// Burger one code using my ORM
 // this "selectAll" is defined in burger.js (THE MODEL)
 burger.selectAll(function (data) {
-
   var hbsObject = {
     // 	// tableName as property
     burgers: data
@@ -62,8 +60,6 @@ burger.selectAll(function (data) {
   res.render('index');
 });
 */
-
-
 
 router.post('/api/burgers', function(req, res) {
   // burger.insertOne([
