@@ -12,7 +12,7 @@ var router = express.Router();
 
 // ROUTES
 // ==========================================
-module.exports = function (app) {
+
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {
   // NEW router.get
@@ -24,24 +24,27 @@ router.get('/', function(req, res) {
   //   res.render('index', hbsObject);
   //   res.render('index');
   // })
-  app.get('/api/burgers', function (req, res) {
-    var query = {};
-    if (req.query.customer_id) {
-      query.CustomerId = req.query.customer_id;
-    }
+  
+    // var query = {};
+    // if (req.query.customer_id) {
+    //   query.CustomerId = req.query.customer_id;
+    // }
     db.Burger.findAll({
-      where: query,
+      // where: query,
       include: [db.Customer]
+      // Burgers: data
     }).then(function (dbBurger) {
-      res.json(dbBurger);
-      let hbsObject = {
-        Burgers: dbBurger
-      };
+      // res.json(dbBurger);
+      let hbsObject = dbBurger;
+      // {
+        // Burgers: dbBurger
+        
+      // };
       console.log(hbsObject);
       res.render('index', hbsObject);
       res.render('index');
     });
-  });
+  
 
 });
 
@@ -90,7 +93,7 @@ router.put('/api/burgers/:id', function(req, res) {
   // });
 });
 
-}
+
 
 
 // EXPORTS
