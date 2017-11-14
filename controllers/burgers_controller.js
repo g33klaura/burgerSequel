@@ -12,23 +12,55 @@ var router = express.Router();
 
 // ROUTES
 // ==========================================
+module.exports = function (app) {
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {
-  
-  // this "selectAll" is defined in burger.js (THE MODEL)
-  
-  // burger.selectAll(function(data) {
-
-  	// ...probably 'handlebars Object'
-    // var hbsObject = {
-    // 	// tableName as property
-    //   burgers: data
-    // };
-    // console.log(hbsObject);
-    // res.render('index', hbsObject);
-    res.render('index');
+  // NEW router.get
+  // db.Burger.findAll(function (data) {
+  //   let hbsObject = {
+  //     Burgers: data
+  //   };
+  //   console.log(hbsObject);
+  //   res.render('index', hbsObject);
+  //   res.render('index');
+  // })
+  app.get('/api/burgers', function (req, res) {
+    var query = {};
+    if (req.query.customer_id) {
+      query.CustomerId = req.query.customer_id;
+    }
+    db.Burger.findAll({
+      where: query,
+      include: [db.Customer]
+    }).then(function (dbBurger) {
+      res.json(dbBurger);
+      let hbsObject = {
+        Burgers: dbBurger
+      };
+      console.log(hbsObject);
+      res.render('index', hbsObject);
+      res.render('index');
+    });
   });
-// });
+
+});
+
+
+/*
+// this "selectAll" is defined in burger.js (THE MODEL)
+burger.selectAll(function (data) {
+
+  var hbsObject = {
+    // 	// tableName as property
+    burgers: data
+  };
+  console.log(hbsObject);
+  res.render('index', hbsObject);
+  res.render('index');
+});
+*/
+
+
 
 router.post('/api/burgers', function(req, res) {
   // burger.insertOne([
@@ -57,6 +89,8 @@ router.put('/api/burgers/:id', function(req, res) {
   //   }
   // });
 });
+
+}
 
 
 // EXPORTS
