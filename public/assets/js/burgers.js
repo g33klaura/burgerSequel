@@ -30,7 +30,7 @@ $(function() {
 	// Click function for '#add-burger' button
 	$('#add-burger').on('click', function(event) {
 
-		// console.log('submit clicked');
+		console.log('submit clicked');
 
     // Make sure to preventDefault on a submit event
     event.preventDefault();
