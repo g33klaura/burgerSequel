@@ -17,6 +17,7 @@ const app = express();
 
 // Require models for syncing
 let db = require('./models');
+// var db = require('./models/burger.js');
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());

@@ -1,10 +1,10 @@
 // REQUIREMENTS
 // ==========================================
 // Import burger model script
-// var burger = require('../models/burger.js');
+var Burger = require('../models/burger.js');
 
 // Sequelize model requirements
-const db = require('../models');
+// const db = require('../models');
 
 var express = require('express');
 var router = express.Router();
@@ -15,35 +15,29 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {
-  // NEW router.get
-  // db.Burger.findAll(function (data) {
-  //   let hbsObject = {
-  //     Burgers: data
-  //   };
-  //   console.log(hbsObject);
-  //   res.render('index', hbsObject);
-  //   res.render('index');
-  // })
-  
-    var query = {};
+  // db.Burger.findAll({})
+  Burger.findAll({})
+    .then(function (dbBurger) {
+      res.json(dbBurger);
+    });
+
+  // ==========================================
+  /*  
+  var query = {};
       if (req.query.customer_id) {
         query.CustomerId = req.query.customer_id;
       }
     db.Burger.findAll({
       where: query,
       include: [db.Customer]
-      // Burgers: data
     }).then(function (dbBurger) {
       // res.json(dbBurger);
       let hbsObject = dbBurger;
-      // {
-        // Burgers: dbBurger
-        
-      // };
       console.log(hbsObject);
       res.render('index', hbsObject);
       // res.render('index');
     });
+    */
 });
 
 
