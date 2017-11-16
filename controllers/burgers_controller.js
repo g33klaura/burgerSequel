@@ -70,6 +70,10 @@ router.post('/api/burgers', function(req, res) {
   //   // Send back the ID of the new quote
   //   res.json({ id: result.insertId });
   // });
+  db.Burger.create(req.body).then(function (dbBurger) {
+    console.log(dbBurger);
+    res.json(dbBurger);
+  });
 });
 
 router.put('/api/burgers/:id', function(req, res) {
@@ -87,6 +91,17 @@ router.put('/api/burgers/:id', function(req, res) {
   //     res.status(200).end();
   //   }
   // });
+  db.Burger.update(
+    // req.body,
+    req.body.devoured,
+    {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbBurger) {
+      console.log(dbBurger);
+      res.json(dbBurger);
+    });
 });
 
 
