@@ -6,7 +6,7 @@ A "restaurant app" that lets users input the names of burgers they'd like to eat
 * Uses MVC (Model, View, Controller) structure
 
 ### Deployed Link
-[Heroku] Link here.
+[Heroku] https://enigmatic-basin-38014.herokuapp.com/
 
 ### Key Features
 * User text inputs (burgers) are saved to a MySQL database
